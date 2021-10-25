@@ -122,6 +122,7 @@ const TypeContainer = (props) => {
     setBegan(0);
     setEnd(false);
     setCPM("");
+    setAccuracy("");
     setWPM("");
     setTypedText([]);
     setPassageIndex({
