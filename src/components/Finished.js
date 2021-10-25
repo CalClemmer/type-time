@@ -8,8 +8,7 @@ const Finished = (props) => {
     return (
       <div>
         <p>
-          Good job! You completed passage #{passage["i"]} out of{" "}
-          {passage["total"]}
+          Good job! You completed line #{passage["i"]} out of {passage["total"]}
         </p>
       </div>
     );
