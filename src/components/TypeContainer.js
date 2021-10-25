@@ -35,7 +35,8 @@ const TypeContainer = (props) => {
 
   useEffect(() => {
     let i = Math.floor(bee.length * Math.random());
-    setPassageIndex({ i: i, total: bee.length });
+    setPassageIndex({ i: i + 1, total: bee.length });
+
     //   console.log(response.data)
     setText(bee[i].text.split(""));
   }, []);
@@ -89,13 +90,11 @@ const TypeContainer = (props) => {
           setCPM(cpm);
           setWPM(wpm);
         }
-        console.log("typedtext", typedText);
         if (key.key === " ") {
           document.getElementById("myInput").value = "";
         }
 
         // if (text.length === index + 1) {
-        console.log("text", text, "text length", text.length);
         if (textLength === 1) {
           setEnd(true);
         }
@@ -115,6 +114,22 @@ const TypeContainer = (props) => {
 
   function prevent(e) {
     e.preventDefault();
+  }
+
+  function next() {
+    document.getElementById("myInput").value = "";
+    setMistakes(0);
+    setBegan(0);
+    setEnd(false);
+    setCPM("");
+    setWPM("");
+    setTypedText([]);
+    setPassageIndex({
+      i: (passageIndex["i"] % (passageIndex["total"] - 1)) + 1,
+      total: bee.length,
+    });
+    console.log("ii", passageIndex["i"]);
+    setText(bee[passageIndex["i"]].text.split(""));
   }
 
   return (
@@ -137,6 +152,7 @@ const TypeContainer = (props) => {
       <p>Accuracy: {accuracy}% </p>
       <p>CPM: {CPM}</p>
       <p>WPM: {WPM}</p>
+      <button onClick={next}>Next Line</button>
     </div>
   );
 };
@@ -633,7 +649,7 @@ let bee = [
   {
     _id: "61719be9b432dc18264bd0c8",
     genre: "bee",
-    text: "\" You pick it up. That's very funny. Yeah. Bees are funny. If we didn't laugh, we'd cry with what we have to deal with. Anyway... Can I... ...",
+    text: "You pick it up. That's very funny. Yeah. Bees are funny. If we didn't laugh, we'd cry with what we have to deal with. Anyway... Can I... ...",
     __v: 0,
   },
   {
@@ -1983,7 +1999,7 @@ let bee = [
   {
     _id: "61719be9b432dc18264bd1b0",
     genre: "bee",
-    text: "All right. Take ten, everybody. Wrap it up, guys. I had virtually no rehearsal for that.",
+    text: "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground.",
     __v: 0,
   },
 ];

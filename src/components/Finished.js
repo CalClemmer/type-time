@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 const Finished = (props) => {
-  console.log("the eend", props.end.end);
   let passage = props.passageIndex.passageIndex;
-  console.log("passage", passage);
   if (props.end.end) {
     return (
       <div>
@@ -13,7 +11,11 @@ const Finished = (props) => {
       </div>
     );
   } else {
-    return <div></div>;
+    return (
+      <div>
+        line #{passage["i"]} out of {passage["total"]}
+      </div>
+    );
   }
 };
 
