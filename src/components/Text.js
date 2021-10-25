@@ -11,8 +11,16 @@ const Text = (props) => {
   //   // issue: can't edit string
   //   // solution: ...work with arrays?
   // }
+  console.log(props);
 
-  return <div>{props.text}</div>;
+  return (
+    <div>
+      <h5>
+        <span className="typed-text">{props.typedText}</span>
+        {props.text}
+      </h5>
+    </div>
+  );
 };
 
 export default Text;

@@ -13,6 +13,14 @@
   }
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px; /* Set the fixed height of the footer here */
+  line-height: 30px; /* Vertically center the text there */
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +43,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.type-container {
+  max-width: 550px;
+}
+
+.typed-text {
+  color: #18f;
 }
