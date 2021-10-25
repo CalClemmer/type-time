@@ -26,7 +26,6 @@ const Profile = (props) => {
       <p>Name: {name}</p>
       <p>Email: {email}</p>
       <p>ID: {id}</p>
-      <h2>Games you've favorited: </h2>
     </div>
   ) : (
     <h2>Loading...</h2>

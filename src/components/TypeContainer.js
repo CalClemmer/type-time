@@ -6,7 +6,7 @@ import axios from "axios";
 const TypeContainer = (props) => {
   //   const [key, setKey] = useState("placeholder");
   let [index, setIndexValue] = useState(0);
-  let [text, setText] = useState("loading...".split(""));
+  let [text, setText] = useState("х   loading   х".split(""));
   let [mistakes, setMistakes] = useState(0);
   let [began, setBegan] = useState(0);
   let [end, setEnd] = useState(false);
